@@ -33,10 +33,22 @@ function useFormValidation(initialState, validate, setActive) {
   }
 
   function handleSubmit(event) {
-    event.preventDefault();
+    const noErrors = Object.keys(errors).length === 0;
     const validationErrors = validate(values);
     setErrors(validationErrors);
+
+    if (noErrors) {
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact", values })
+      })
+      .then(() => alert("Success!"))
+      .catch(error => console.log(error));
+    }
+
     setSubmitting(true);
+    event.preventDefault();
   }
 
   return {

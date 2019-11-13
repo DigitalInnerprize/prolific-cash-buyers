@@ -42,10 +42,6 @@ const SellerForm = () => {
           <div className="envelope-top"></div>
           <div className="card"> 
             <form
-              name="contact"
-              method="POST"
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
               onSubmit={handleSubmit}
               >
               <div className="half-input-container">
