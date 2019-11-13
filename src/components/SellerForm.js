@@ -8,6 +8,7 @@ const INITIAL_STATE = {
   name: "",
   phone: "",
   email: "",
+  comment: ``
 };
 
 const SellerForm = () => {
@@ -83,7 +84,7 @@ const SellerForm = () => {
               />
               {errors.email && <p className="error-text">{errors.email}</p>}
               </div>
-              <textarea className="message-content" name="comment" placeholder="Property address and features..." aria-required="true"></textarea>
+              <textarea className="message-content" name="comment" placeholder="Property address and features..." aria-required="true" onChange={handleChange} value={values.comment}></textarea>
               <button disabled={isSubmitting} className="send-button" type="submit">Send Email</button>
             </form>
           </div>
