@@ -16,7 +16,6 @@ function useFormValidation(initialState, validate, setActive) {
     if (isSubmitting) {
       const noErrors = Object.keys(errors).length === 0;
       if (noErrors) {
-        setSuccessMessage('Your email has been sent someone will reach out to you shortly!');
         setSubmitting(false);
         setValues(initialState);
         setActive(false)
@@ -47,9 +46,9 @@ function useFormValidation(initialState, validate, setActive) {
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": "contact", values })
+        body: encode({ "form-name": "contact", ...values })
       })
-      .then(() => alert("Success!"))
+      .then(() => setSuccessMessage('Your email has been sent someone will reach out to you shortly!'))
       .catch(error => console.log(error));
     }
 
