@@ -1,0 +1,43 @@
+/* fonts */
+
+$fontFamily: fira sans, sans-serif;
+$fontSizeBase: 14.8px;
+
+
+$transparency: 0.7;
+
+/* grid */
+
+$gridColumns: 12;
+$gridGutterWidth: 30px;
+
+/* layout */
+
+$spacing--xs: 6px;
+$spacing--sm: 10px;
+$spacing--md: 20px;
+$spacing--lg: 28px;
+$spacing--xl: 38px;
+$spacing--xxl: 68px;
+$spacing--xxxl: 82px;
+
+$mobile-panel-width: 100%;
+$tablet-panel-width: 300px;
+$news-nav-height: 70px;
+$content-width--max--md: 78%;
+$content-width--max: 900px;
+$content-width--max--narrow: 800px;
+
+/* multipliers */
+
+$multiplier-regular-sm: 1;
+$multiplier-regular-md: 1.05;
+$multiplier-regular-lg: 1.08;
+$multiplier-regular-xl: 1.1;
+$multiplier-regular-xxl: 1.12;
+
+$multiplier-heading-sm: 1.05;
+$multiplier-heading-md: 1.18;
+$multiplier-heading-lg: 1.25;
+$multiplier-heading-xl: 1.3;
+$multiplier-heading-xxl: 1.4;

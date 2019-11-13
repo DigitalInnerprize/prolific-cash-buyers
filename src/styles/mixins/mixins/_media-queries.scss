@@ -1,0 +1,193 @@
+$screen-xs: 320px;
+$screen-xs1: 400px;
+$screen-xs2: 480px;
+$screen-xs3: 550px;
+$screen-xs4: 620px;
+$screen-xs5: 690px;
+$screen-sm: 768px;
+$screen-xs-max: ($screen-sm - 1);
+$screen-md: 992px;
+$screen-sm-max: ($screen-md - 1);
+$screen-lg: 1200px;
+$screen-md-max: ($screen-lg - 1);
+$screen-xl: 1400px;
+$screen-xxl: 1600px;
+// $screen-xxxl : 1920px;
+
+@mixin breakpoint-custom($breakpoint) {
+  @media (min-width: #{$breakpoint}) {
+    @content;
+  }
+}
+@mixin breakpoint-max($breakpoint) {
+  @media (max-width: #{$breakpoint}) {
+    @content;
+  }
+}
+@mixin breakpoint-range($min, $max) {
+  @media (min-width: #{$min}) and (max-width: #{$max}) {
+    @content;
+  }
+}
+
+@mixin breakpoint-xxs-max {
+  @include breakpoint-max($screen-xs - 1) {
+    @content;
+  }
+}
+@mixin breakpoint-xxs1-max {
+  @include breakpoint-max($screen-xs1 - 1) {
+    @content;
+  }
+}
+@mixin breakpoint-xxs2-max {
+  @include breakpoint-max($screen-xs2 - 1) {
+    @content;
+  }
+}
+@mixin breakpoint-xs {
+  @include breakpoint-custom($screen-xs) {
+    @content;
+  }
+}
+@mixin breakpoint-xs-max {
+  @include breakpoint-max($screen-sm - 1) {
+    @content;
+  }
+}
+@mixin breakpoint-xs1 {
+  @include breakpoint-custom($screen-xs1) {
+    @content;
+  }
+}
+@mixin breakpoint-xs2 {
+  @include breakpoint-custom($screen-xs2) {
+    @content;
+  }
+}
+@mixin breakpoint-xs3 {
+  @include breakpoint-custom($screen-xs3) {
+    @content;
+  }
+}
+@mixin breakpoint-xs4 {
+  @include breakpoint-custom($screen-xs4) {
+    @content;
+  }
+}
+@mixin breakpoint-xs5 {
+  @include breakpoint-custom($screen-xs5) {
+    @content;
+  }
+}
+@mixin breakpoint-sm {
+  @include breakpoint-custom($screen-sm) {
+    @content;
+  }
+}
+@mixin breakpoint-sm-max {
+  @include breakpoint-max($screen-md - 1) {
+    @content;
+  }
+}
+@mixin breakpoint-md {
+  @include breakpoint-custom($screen-md) {
+    @content;
+  }
+}
+@mixin breakpoint-md-max {
+  @include breakpoint-max($screen-lg - 1) {
+    @content;
+  }
+}
+@mixin breakpoint-lg {
+  @include breakpoint-custom($screen-lg) {
+    @content;
+  }
+}
+@mixin breakpoint-xl {
+  @include breakpoint-custom($screen-xl) {
+    @content;
+  }
+}
+@mixin breakpoint-xxl {
+  @include breakpoint-custom($screen-xxl) {
+    @content;
+  }
+}
+
+@mixin mobile-only() {
+  @include breakpoint-sm {
+    display: none !important;
+  }
+}
+@mixin mobile-only--xs() {
+  @include breakpoint-xs {
+    display: none !important;
+  }
+}
+@mixin sm-to-lg-only() {
+  display: none;
+
+  @include breakpoint-sm {
+    display: block;
+  }
+  @include breakpoint-lg {
+    display: none;
+  }
+}
+@mixin sm-to-xl-only() {
+  display: none;
+
+  @include breakpoint-sm {
+    display: block;
+  }
+  @include breakpoint-xl {
+    display: none;
+  }
+}
+// TODO add display: inline-block option
+@mixin desktop-only() {
+  display: none;
+
+  @include breakpoint-sm {
+    display: block;
+  }
+}
+@mixin desktop-inline-only() {
+  display: none;
+
+  @include breakpoint-sm {
+    display: inline-block;
+  }
+}
+@mixin mq-md() {
+  display: none;
+
+  @include breakpoint-md {
+    display: block;
+  }
+}
+@mixin desktop-xl-only() {
+  display: none;
+
+  @include breakpoint-xl {
+    display: block;
+  }
+}
+
+.u-mobile-only {
+  @include mobile-only();
+}
+.u-mobile-only--xs {
+  @include mobile-only--xs();
+}
+.u-desktop-only {
+  @include desktop-only();
+}
+.u-sm-to-lg-only {
+  @include sm-to-lg-only();
+}
+.u-sm-to-xl-only {
+  @include sm-to-xl-only();
+}

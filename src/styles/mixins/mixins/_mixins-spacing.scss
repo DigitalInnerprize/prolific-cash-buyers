@@ -1,0 +1,231 @@
+@mixin margin__top($base: $spacing--md) {
+  margin-top: $base;
+
+  @include breakpoint-sm {
+    margin-top: ($base * $multiplier-regular-sm);
+  }
+  @include breakpoint-md {
+    margin-top: ($base * $multiplier-regular-md);
+  }
+  @include breakpoint-lg {
+    margin-top: ($base * $multiplier-regular-lg);
+  }
+  @include breakpoint-xl {
+    margin-top: ($base * $multiplier-regular-xl);
+  }
+  @include breakpoint-xxl {
+    margin-top: ($base * $multiplier-regular-xxl);
+  }
+}
+
+@mixin margin__bottom($base: $spacing--md) {
+  margin-bottom: $base;
+
+  @include breakpoint-sm {
+    margin-bottom: ($base * $multiplier-regular-sm);
+  }
+  @include breakpoint-md {
+    margin-bottom: ($base * $multiplier-regular-md);
+  }
+  @include breakpoint-lg {
+    margin-bottom: ($base * $multiplier-regular-lg);
+  }
+  @include breakpoint-xl {
+    margin-bottom: ($base * $multiplier-regular-xl);
+  }
+  @include breakpoint-xxl {
+    margin-bottom: ($base * $multiplier-regular-xxl);
+  }
+}
+
+@mixin margin__left($base: $spacing--md) {
+  margin-left: $base;
+
+  @include breakpoint-sm {
+    margin-left: ($base * $multiplier-regular-sm);
+  }
+  @include breakpoint-md {
+    margin-left: ($base * $multiplier-regular-md);
+  }
+  @include breakpoint-lg {
+    margin-left: ($base * $multiplier-regular-lg);
+  }
+  @include breakpoint-xl {
+    margin-left: ($base * $multiplier-regular-xl);
+  }
+  @include breakpoint-xxl {
+    margin-left: ($base * $multiplier-regular-xxl);
+  }
+}
+
+@mixin margin__right($base: $spacing--md) {
+  margin-right: $base;
+
+  @include breakpoint-sm {
+    margin-right: ($base * $multiplier-regular-sm);
+  }
+  @include breakpoint-md {
+    margin-right: ($base * $multiplier-regular-md);
+  }
+  @include breakpoint-lg {
+    margin-right: ($base * $multiplier-regular-lg);
+  }
+  @include breakpoint-xl {
+    margin-right: ($base * $multiplier-regular-xl);
+  }
+  @include breakpoint-xxl {
+    margin-right: ($base * $multiplier-regular-xxl);
+  }
+}
+
+@mixin margin__top-bottom($top: $spacing--md, $bottom: null) {
+  @if ($bottom) {
+    @include margin__top($top) @include margin__bottom($bottom);
+  } @else {
+    @include margin__top($top) @include margin__bottom($top);
+  }
+}
+
+@mixin margin__left-right($left: 0, $right: null) {
+  @if ($right) {
+    margin-left: $left;
+    margin-right: $right;
+  } @else {
+    margin-left: $left;
+    margin-right: $left;
+  }
+}
+
+@mixin margin__left-right-auto() {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin margin__left-auto() {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+@mixin margin__left-right-initial() {
+  margin-left: initial;
+  margin-right: initial;
+}
+@mixin padding__top($base: $spacing--sm) {
+  padding-top: $base;
+
+  @include breakpoint-sm {
+    padding-top: ($base * $multiplier-regular-sm);
+  }
+  @include breakpoint-md {
+    padding-top: ($base * $multiplier-regular-md);
+  }
+  @include breakpoint-lg {
+    padding-top: ($base * $multiplier-regular-lg);
+  }
+  @include breakpoint-xl {
+    padding-top: ($base * $multiplier-regular-xl);
+  }
+  @include breakpoint-xxl {
+    padding-top: ($base * $multiplier-regular-xxl);
+  }
+}
+
+@mixin padding__right($base: $spacing--sm) {
+  padding-right: $base;
+
+  @include breakpoint-sm {
+    padding-right: ($base * $multiplier-regular-sm);
+  }
+  @include breakpoint-md {
+    padding-right: ($base * $multiplier-regular-md);
+  }
+  @include breakpoint-lg {
+    padding-right: ($base * $multiplier-regular-lg);
+  }
+  @include breakpoint-xl {
+    padding-right: ($base * $multiplier-regular-xl);
+  }
+  @include breakpoint-xxl {
+    padding-right: ($base * $multiplier-regular-xxl);
+  }
+}
+
+@mixin padding__bottom($base: $spacing--sm) {
+  padding-bottom: $base;
+
+  @include breakpoint-sm {
+    padding-bottom: ($base * $multiplier-regular-sm);
+  }
+  @include breakpoint-md {
+    padding-bottom: ($base * $multiplier-regular-md);
+  }
+  @include breakpoint-lg {
+    padding-bottom: ($base * $multiplier-regular-lg);
+  }
+  @include breakpoint-xl {
+    padding-bottom: ($base * $multiplier-regular-xl);
+  }
+  @include breakpoint-xxl {
+    padding-bottom: ($base * $multiplier-regular-xxl);
+  }
+}
+
+@mixin padding__left($base: $spacing--sm) {
+  padding-left: $base;
+
+  @include breakpoint-sm {
+    padding-left: ($base * $multiplier-regular-sm);
+  }
+  @include breakpoint-md {
+    padding-left: ($base * $multiplier-regular-md);
+  }
+  @include breakpoint-lg {
+    padding-left: ($base * $multiplier-regular-lg);
+  }
+  @include breakpoint-xl {
+    padding-left: ($base * $multiplier-regular-xl);
+  }
+  @include breakpoint-xxl {
+    padding-left: ($base * $multiplier-regular-xxl);
+  }
+}
+
+@mixin padding__top-bottom($top: $spacing--sm, $bottom: null) {
+  @if ($bottom) {
+    @include padding__top($top);
+    @include padding__bottom($bottom);
+  } @else {
+    @include padding__top($top);
+    @include padding__bottom($top);
+  }
+}
+
+@mixin padding__left-right($left: $spacing--sm, $right: null) {
+  @if ($right) {
+    @include padding__left($left);
+    @include padding__right($right);
+  } @else {
+    @include padding__left($left);
+    @include padding__right($left);
+  }
+}
+
+@mixin responsive-height($base: $spacing--sm) {
+  height: $base;
+
+  @include breakpoint-sm {
+    height: ($base * $multiplier-regular-sm);
+  }
+  @include breakpoint-md {
+    height: ($base * $multiplier-regular-md);
+  }
+  @include breakpoint-lg {
+    height: ($base * $multiplier-regular-lg);
+  }
+  @include breakpoint-xl {
+    height: ($base * $multiplier-regular-xl);
+  }
+  @include breakpoint-xxl {
+    height: ($base * $multiplier-regular-xxl);
+  }
+}

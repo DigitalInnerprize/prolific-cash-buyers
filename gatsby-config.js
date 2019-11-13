@@ -1,10 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Prolific Cash Buyers`,
+    description: `Do you need help selling your unwanted property fast? Or maybe you need to sell for quick cash for your next move... whatever the case may be we will take that property off you head and shoulders if the price is right!`,
+    author: 'Digital InnerPrize l.l.c'
   },
   plugins: [
+    `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

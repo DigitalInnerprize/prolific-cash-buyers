@@ -1,0 +1,202 @@
+.seller-form-container {
+  height: 100%;
+  background: radial-gradient(ellipse at top, #40485a 0%, #282e3a 60%);
+  color: white;
+}
+
+.content-container {
+  height: 100%;
+}
+
+.title-banner {
+  padding-top: 50px;
+  margin: 0 auto;
+  max-width: 1000px;
+
+  .intro-title {
+    padding-top: 20px;
+    @include font-sizer(28px);
+  }
+  
+  .intro-sub-title {
+    margin: 20px 0;
+    @include font-sizer(24px);
+  }
+}
+
+// Envelope
+.envelope-wrapper {
+  position:relative;
+  display:inline-block;
+  margin-top: 95px;
+}
+
+.envelope{
+  margin: 2em auto 0;
+  position:relative;
+  z-index: 0;
+  display:inline-block;
+  @include box-shadow(0 150px 90px 0 rgba(0,0,0,0.3));
+
+  &::before,
+  &::after {
+    content:'';
+    display: block;
+    position: absolute;
+    top: 7em;
+    z-index:4;
+    border-style: solid;
+  }
+
+  &::before {
+    border-width: 17.4em 0 0 24em;
+    border-color: transparent transparent transparent #3596da;
+
+    @include breakpoint-custom($screen-xs-max) {
+      border-width: 20.6em 0 0 35em;
+    }
+  }
+
+  &::after {
+    width: 0;
+    height: 0;
+    right: 0;
+    border-width: 8.1em 13em 9.3em 0;
+    border-color: transparent #2a7fb5 transparent transparent;
+
+    @include breakpoint-custom($screen-xs-max) {
+      border-width: 9.4em 19em 11.2em 0;
+    }
+  }
+}
+.envelope-top {
+  width: 0;
+  height: 0;
+  z-index: 0;
+  position: relative;
+  -webkit-transform-origin: top;
+  -webkit-transform: translate(0px,0px) scale(1) rotateX(0deg);
+  @include transition( 0.5s ease-in .4s forwards, z-index 1s ease-out .5s);
+  margin-top:7em;
+  border-style: solid;
+  z-index:3;
+  border-width: 10em 14em 0 10em;
+  border-color: #256a98 transparent transparent  transparent;
+  .active & {
+    z-index:0;
+    @include transition( 0.5s ease-in 0s forwards, z-index 1s ease-in-out .5s);
+    -webkit-transform-origin: top;
+    -webkit-transform: translate(0px,0px) scale(1) rotateX(-180deg);
+  }
+
+  @include breakpoint-custom($screen-xs-max) {
+    border-width: 12em 22em 0 13em;
+  }
+}
+
+.active .card {
+  top: -85px;
+  z-index: 4;
+  @include transition(top 0.5s ease-in-out .5s, z-index 1s ease-in-out .5s);
+
+  @include breakpoint-custom($screen-xs-max) {
+    top: -100px;
+  }
+}
+
+.card {
+	width: 100%;
+	position: absolute;
+	top:120px;
+	z-index: 2;
+	background: white;
+  padding:1.5em 1.5em 4% 1.5em;
+	border-radius: 5px;
+  @include transition(top 0.5s ease-in-out);
+	text-align: center;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: #919499;
+}
+
+@mixin button {
+  background-color: #E74C3C;
+  border: 1px solid #b24c45;
+  color:white;
+  text-align:center;
+  font-weight:bold;
+  font-size:1.5em;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  padding:.75em .5em;
+  line-height:1em;
+  display:inline-block;
+  cursor:pointer;
+  @include border-radius(0px 4px 4px 0);
+  @include box-shadow(1px 2px #b24c45);
+  @include transition(background-color 200ms);
+
+  &:hover {
+    background-color: #B74C3B;
+  }
+}
+// Button
+.email-button {
+  @include button();
+  position: absolute;
+  bottom: 0em;
+  left: -.5em;
+  &:before {
+    content:"";
+    display: block;
+    position: absolute;
+    top: -15px;
+    border-style: solid;
+    width: 0;
+    height: 0;
+    left: 0;
+    border-width: 0 1px 14px 11px ;
+    border-color: transparent transparent darken(#b24c45, 5%) transparent;
+  }
+}
+
+.send-button {
+  @include button();
+  padding: 0.35em .25em;
+}
+// Forms
+::-webkit-input-placeholder {color: #a1a1a1;}
+::-moz-placeholder {color: #a1a1a1;}
+:-ms-input-placeholder {color: #a1a1a1;}
+.full-input, .half-input, textarea {
+  font-size: 1em;
+  display:block;
+  margin-bottom:4px;
+  border: none;
+  background-color: #dcdcdc;
+  position:relative;
+  display:block;
+  height:3em;
+  padding: 15px;
+  color:grey;
+  @include border-radius(0px);
+}
+
+.full-input, textarea {
+  width:100%;
+}
+
+textarea {
+  height:100%;
+}
+
+.half-input {
+  width: 100%;
+}
+
+.half-input-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+}

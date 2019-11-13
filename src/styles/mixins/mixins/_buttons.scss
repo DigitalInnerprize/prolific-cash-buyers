@@ -1,0 +1,20 @@
+@mixin button-hover-active($color: null) {
+  &:hover {
+    background: lighten($color, 6%);
+  }
+  &:active {
+    background: lighten($color, 10%);
+  }
+}
+
+@mixin button($color: null, $top: null, $bottom: null ) {
+  @include margin__top-bottom($top, $bottom);
+  width: 260px;
+  height: 70px;
+  border-radius: 42px;
+  background-color: $color;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  @include button-hover-active($color);
+}

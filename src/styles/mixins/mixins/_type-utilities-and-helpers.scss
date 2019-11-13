@@ -1,0 +1,65 @@
+@mixin font-sizer--regular($base-font-size: $fontSizeBase) {
+  font-size: $base-font-size;
+
+  @include breakpoint-sm {
+    font-size: $base-font-size * $multiplier-regular-sm;
+  }
+  @include breakpoint-md {
+    font-size: $base-font-size * $multiplier-regular-md;
+  }
+  @include breakpoint-lg {
+    font-size: $base-font-size * $multiplier-regular-lg;
+  }
+  @include breakpoint-xl {
+    font-size: $base-font-size * $multiplier-regular-xl;
+  }
+  @include breakpoint-xxl {
+    font-size: $base-font-size * $multiplier-regular-xxl;
+  }
+}
+
+@mixin font-sizer($base-font-size: $fontSizeBase) {
+  font-size: $base-font-size;
+
+  @include breakpoint-xs {
+    font-size: $base-font-size;
+  }
+  @include breakpoint-sm {
+    font-size: $base-font-size * $multiplier-heading-sm;
+  }
+  @include breakpoint-md {
+    font-size: $base-font-size * $multiplier-heading-md;
+  }
+  @include breakpoint-lg {
+    font-size: $base-font-size * $multiplier-heading-lg;
+  }
+  @include breakpoint-xl {
+    font-size: $base-font-size * $multiplier-heading-xl;
+  }
+  @include breakpoint-xxl {
+    font-size: $base-font-size * $multiplier-heading-xxl;
+  }
+}
+
+@mixin font-sizer--special($base-font-size: $font-size--text-base) {
+  font-size: $base-font-size;
+
+  @include breakpoint-xs1 {
+    font-size: $base-font-size * $multiplier-special-xs1;
+  }
+  @include breakpoint-sm {
+    font-size: $base-font-size * $multiplier-special-sm;
+  }
+  @include breakpoint-md {
+    font-size: $base-font-size * $multiplier-special-md;
+  }
+  @include breakpoint-lg {
+    font-size: $base-font-size * $multiplier-special-lg;
+  }
+  @include breakpoint-xl {
+    font-size: $base-font-size * $multiplier-special-xl;
+  }
+  @include breakpoint-xxl {
+    font-size: $base-font-size * $multiplier-special-xxl;
+  }
+}

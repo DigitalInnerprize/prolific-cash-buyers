@@ -1,0 +1,95 @@
+@mixin content-width-sm($is-narrow: null) {
+  @include breakpoint-sm {
+    @include margin__left-right-auto();
+  }
+  @if ($is-narrow) {
+    @include breakpoint-sm {
+      max-width: 96%;
+    }
+    @include breakpoint-custom($content-width--max--narrow / 0.96) {
+      max-width: $content-width--max--narrow;
+    }
+    @include content-width-md(true);
+    @include content-width-lg(true);
+  } @else {
+    @include breakpoint-sm {
+      max-width: 96%;
+    }
+    @include content-width-md();
+    @include content-width-lg();
+  }
+}
+@mixin content-width-md($is-narrow: null) {
+  @include breakpoint-md {
+    @include margin__left-right-auto();
+  }
+  @if ($is-narrow) {
+    @include breakpoint-md {
+      max-width: $content-width--max--narrow;
+    }
+    @include content-width-lg(true);
+  } @else {
+    @include breakpoint-md {
+      max-width: $content-width--max--md;
+    }
+    @include content-width-lg();
+  }
+}
+@mixin content-width-lg($is-narrow: null) {
+  @include breakpoint-lg {
+    @include margin__left-right-auto();
+  }
+  @if ($is-narrow) {
+    @include breakpoint-lg {
+      max-width: $content-width--max--narrow;
+    }
+    @include breakpoint-custom(1500px) {
+      max-width: $content-width--max--narrow;
+    }
+  } @else {
+    @include breakpoint-lg {
+      max-width: $content-width--max--md;
+    }
+    // bp = max / max--md
+    @include breakpoint-custom(1154px) {
+      max-width: $content-width--max;
+    }
+  }
+}
+@mixin content-width($is-narrow: null) {
+  max-width: 92%;
+  @include margin__left-right-auto();
+
+  @if ($is-narrow) {
+    @include content-width-sm(true);
+    @include content-width-md(true);
+    @include content-width-lg(true);
+  } @else {
+    @include content-width-sm();
+    @include content-width-md();
+    @include content-width-lg();
+  }
+}
+
+@mixin content-width-sm-left($is-narrow: null) {
+  max-width: 87%;
+  @include margin__left-auto();
+  @include breakpoint-sm {
+  }
+  @if ($is-narrow) {
+    @include breakpoint-sm {
+      max-width: 96%;
+    }
+    @include breakpoint-custom($content-width--max--narrow / 0.96) {
+      max-width: $content-width--max--narrow;
+    }
+    // @include content-width-md(true);
+    // @include content-width-lg(true);
+  } @else {
+    @include breakpoint-sm {
+      max-width: 96%;
+    }
+    // @include content-width-md();
+    // @include content-width-lg();
+  }
+}
