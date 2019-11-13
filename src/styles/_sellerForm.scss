@@ -10,8 +10,9 @@
 
 .title-banner {
   padding-top: 50px;
-  margin: 0 auto;
+  margin: 0 auto 100px;
   max-width: 1000px;
+  text-align: center;
 
   .intro-title {
     padding-top: 20px;
@@ -24,11 +25,20 @@
   }
 }
 
+.padding-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 // Envelope
 .envelope-wrapper {
   position:relative;
   display:inline-block;
-  margin-top: 95px;
+  height: 600px;
+  width: 100%;
+  text-align: center;
 }
 
 .envelope{
@@ -49,7 +59,7 @@
   }
 
   &::before {
-    border-width: 17.4em 0 0 24em;
+    border-width: 16.4em 0 0 20.1em;
     border-color: transparent transparent transparent #3596da;
 
     @include breakpoint-custom($screen-xs-max) {
@@ -61,7 +71,7 @@
     width: 0;
     height: 0;
     right: 0;
-    border-width: 8.1em 13em 9.3em 0;
+    border-width: 7em 11.5em 9.4em 0;
     border-color: transparent #2a7fb5 transparent transparent;
 
     @include breakpoint-custom($screen-xs-max) {
@@ -80,7 +90,7 @@
   margin-top:7em;
   border-style: solid;
   z-index:3;
-  border-width: 10em 14em 0 10em;
+  border-width: 10em 14em 0 6em;
   border-color: #256a98 transparent transparent  transparent;
   .active & {
     z-index:0;
@@ -144,8 +154,9 @@
 .email-button {
   @include button();
   position: absolute;
-  bottom: 0em;
-  left: -.5em;
+  bottom: 10em;
+  left: 0.29em;
+
   &:before {
     content:"";
     display: block;
@@ -157,6 +168,11 @@
     left: 0;
     border-width: 0 1px 14px 11px ;
     border-color: transparent transparent darken(#b24c45, 5%) transparent;
+  }
+
+  @include breakpoint-custom($screen-xs-max) {
+    bottom: 0em;
+    left: -.5em;
   }
 }
 

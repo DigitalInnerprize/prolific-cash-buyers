@@ -36,6 +36,7 @@ const SellerForm = () => {
           <p>{successMessage}</p>
         </div>
       }
+      <div className="padding-wrapper">
       <div className="envelope-wrapper">
         <div className={cx("envelope", {
           'active' : active
@@ -87,6 +88,7 @@ const SellerForm = () => {
               <textarea className="message-content" name="comment" placeholder="Property address and features..." aria-required="true" onChange={handleChange} value={values.comment}></textarea>
               <button disabled={isSubmitting} className="send-button" type="submit">Send Email</button>
             </form>
+          </div>
           </div>
           </div>
         <span className="email-button" onClick={() => setActive(!active)}>
