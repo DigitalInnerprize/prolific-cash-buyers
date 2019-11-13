@@ -1,5 +1,11 @@
 import React from "react";
 
+const encode = (data) => {
+  return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+}
+
 function useFormValidation(initialState, validate, setActive) {
   const [values, setValues] = React.useState(initialState);
   const [errors, setErrors] = React.useState({});
