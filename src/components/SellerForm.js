@@ -84,7 +84,7 @@ const SellerForm = () => {
               {errors.email && <p className="error-text">{errors.email}</p>}
               </div>
               <textarea className="message-content" name="comment" placeholder="Property address and features..." aria-required="true"></textarea>
-              <button disabled={isSubmitting} className="send-button">Send Email</button>
+              <button disabled={isSubmitting} className="send-button" type="submit">Send Email</button>
             </form>
           </div>
           </div>
