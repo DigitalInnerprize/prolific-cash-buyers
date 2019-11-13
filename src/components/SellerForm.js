@@ -44,8 +44,7 @@ const SellerForm = () => {
             <form
               name="contact"
               method="post"
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
+              netlify
               onSubmit={handleSubmit}
               >
               <div className="half-input-container">
